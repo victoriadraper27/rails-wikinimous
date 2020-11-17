@@ -2,25 +2,25 @@ class ArticlesController < ApplicationController
   before_action :find_article, except: [:index, :new, :create]
 
   def index
-    @articles = Aritcle.all
+    @articles = Article.all
   end
 
   def show; end
 
   def new
-    @article = Aritcle.new
+    @article = Article.new
   end
 
   def create
-    @article = Aritcle.create(article_params)
-    redirect_to article_path(article)
+    @article = Article.create(article_params)
+    redirect_to article_path(@article)
   end
 
   def edit; end
 
   def update
     @article.update(article_params)
-    redirect_to article_path(article)
+    redirect_to article_path(@article)
   end
 
   def destroy
@@ -31,10 +31,10 @@ class ArticlesController < ApplicationController
   private
 
   def find_article
-    @article = Aritcle.find(params[:id])
+    @article = Article.find(params[:id])
   end
 
   def article_params
-    params.require(article).permit(:title, :content)
+    params.require(:article).permit(:title, :details, :completed)
   end
 end

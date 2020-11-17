@@ -2,7 +2,6 @@
 <ul>
   <% @articles.each do |article| %>
   <li>
-   <!--  <%= task.completed ? '☑︎' : '☐' %> -->
     <%= link_to article.title, article_path(article) %> •
     <%= link_to '🗑', article_path(article), method: :delete, data: {confirm: "Delete #{article.title}?"} %>
   </li>

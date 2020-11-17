@@ -1,0 +1,7 @@
+<h1><%= @article.title %></h1>
+<p><%= @article.content %></p>
+<!-- <p><%= @task.completed ? '☑︎ This task is complete' : '☐ This task is not complete' %></p>
+ -->
+
+<%= link_to 'Back to List', articles_path  %>
+<%= link_to "✍︎ Edit this Article", edit_article_path(@article) %>
